@@ -19,14 +19,15 @@ namespace Tawsela.Services.Implementations
         public async Task<bool> MarkAsDeliveredAsync(int shipmentId)
         {
             var shipment = await _shipmentRepository.GetByIdAsync(shipmentId);
-            if (shipment == null) return false;
+            
+            if (shipment == null) 
+                return false;
 
             shipment.Status = ShipmentStatus.Delivered;
 
             _shipmentRepository.Update(shipment);
             await _shipmentRepository.SaveChangesAsync();
 
-            // ✅ Notify via Singleton
             NotificationManager.Instance.Notify($"Shipment #{shipment.Id} has been delivered.");
 
             return true;

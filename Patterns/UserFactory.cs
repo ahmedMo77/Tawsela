@@ -4,9 +4,14 @@ using Tawsela.Enums;
 namespace Tawsela.Patterns
 {
     // factory pattern
-    public static class UserFactory
+    public interface IUserFactory
     {
-        public static User CreateUser(UserRole role, string fullName, string email, string passwordHash)
+        User Create(UserRole role, string fullName, string email, string passwordHash);
+    }
+
+    public class UserFactory : IUserFactory
+    {
+        public User Create(UserRole role, string fullName, string email, string passwordHash)
         {
             User user = role switch
             {

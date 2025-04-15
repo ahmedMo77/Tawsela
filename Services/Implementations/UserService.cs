@@ -10,15 +10,18 @@ namespace Tawsela.Services.Implementations
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IUserFactory _userFactory;
 
-        public UserService(IUserRepository userRepository)
+
+        public UserService(IUserRepository userRepository, IUserFactory userFactory)
         {
             _userRepository = userRepository;
+            _userFactory = userFactory;
         }
 
         public async Task<User> CreateUserAsync(string fullName, string email, string passwordHash, UserRole role)
         {
-            var user = UserFactory.CreateUser(role, fullName, email, passwordHash);
+            var user = _userFactory.Create(role, fullName, email, passwordHash);
 
             await _userRepository.AddAsync(user);
             await _userRepository.SaveChangesAsync();

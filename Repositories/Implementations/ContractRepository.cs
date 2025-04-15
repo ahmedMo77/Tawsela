@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Tawsela.Data;
 using Tawsela.Entities;
 using Tawsela.Repositories.Interfaces;
 

@@ -1,6 +1,7 @@
 ﻿using Tawsela.Entities;
 using Microsoft.EntityFrameworkCore;
 using Tawsela.Repositories.Interfaces;
+using Tawsela.Data;
 
 namespace Tawsela.Repositories.Implementations
 {

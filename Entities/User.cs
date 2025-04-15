@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
-using System.Diagnostics.Contracts;
-using Tawsela.Enums;
+﻿using Tawsela.Enums;
 
 namespace Tawsela.Entities
 {

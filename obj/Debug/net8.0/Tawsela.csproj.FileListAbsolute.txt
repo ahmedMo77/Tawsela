@@ -170,3 +170,4 @@ C:\Users\AS\Desktop\C#_Projects\Tawsela Folder\Tawsela\obj\Debug\net8.0\refint\T
 C:\Users\AS\Desktop\C#_Projects\Tawsela Folder\Tawsela\obj\Debug\net8.0\Tawsela.pdb
 C:\Users\AS\Desktop\C#_Projects\Tawsela Folder\Tawsela\obj\Debug\net8.0\Tawsela.genruntimeconfig.cache
 C:\Users\AS\Desktop\C#_Projects\Tawsela Folder\Tawsela\obj\Debug\net8.0\ref\Tawsela.dll
+C:\Users\AS\Desktop\C#_Projects\Tawsela Folder\Tawsela\obj\Debug\net8.0\Tawsela.sourcelink.json
