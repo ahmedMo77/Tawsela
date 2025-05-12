@@ -1,13 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using Tawsela.Entities;
 using Tawsela.Repositories.Interfaces;
 using Tawsela.Repositories.Implementations;
 using Tawsela.Services.Interfaces;
 using Tawsela.Services.Implementations;
 using Tawsela.Patterns;
-using Tawsela.Enums;
 using Tawsela.Data;
-
+using Tawsela.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +18,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
 // Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IShipmentRepository, ShipmentRepository>();
@@ -32,9 +29,10 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IShipmentService, ShipmentService>();
 builder.Services.AddScoped<IContractService, ContractService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddSingleton<INotificationService, NotificationService>();
 
-builder.Services.AddSingleton<IUserFactory, UserFactory>();
-//var factory = new UserFactory();
+
+builder.Services.AddScoped<IUserFactory, UserFactory>();
 
 var app = builder.Build();
 

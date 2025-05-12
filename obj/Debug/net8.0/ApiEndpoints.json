@@ -238,16 +238,6 @@
   },
   {
     "ContainingType": "Tawsela.Controllers.UserController",
-    "Method": "GetAllUsers",
-    "RelativePath": "api/User",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Tawsela.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User",
     "HttpMethod": "POST",
@@ -255,8 +245,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Tawsela.Entities.User",
+        "Name": "request",
+        "Type": "Tawsela.Services.Implementations.CreateUserRequest",
         "IsRequired": true
       }
     ],
@@ -313,6 +303,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Tawsela.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User/Get all users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

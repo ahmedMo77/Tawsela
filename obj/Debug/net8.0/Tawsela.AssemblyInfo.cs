@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tawsela")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e43b2c0644068a0cec6bf1ed280b381bbb6b525")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48852e544971598d37499d9a0d56df44e0503830")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tawsela")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tawsela")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

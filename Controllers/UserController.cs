@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Tawsela.Entities;
+using Tawsela.Services.Implementations;
 using Tawsela.Services.Interfaces;
 
 namespace Tawsela.Controllers
@@ -16,7 +17,7 @@ namespace Tawsela.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet("Get all users")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();
@@ -33,12 +34,21 @@ namespace Tawsela.Controllers
             return Ok(user);
         }
 
+        // before
+        //[HttpPost]
+        //public async Task<IActionResult> CreateUser([FromBody] User user)
+        //{
+        //    var created = await _userService.CreateUserAsync(user.FullName, user.Email, user.PasswordHash, user.Role);
+        //    return CreatedAtAction(nameof(GetUserById), new { id = created.Id }, created);
+        //}
+
         [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] User user)
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request)
         {
-            var created = await _userService.CreateUserAsync(user.FullName, user.Email, user.PasswordHash, user.Role);
+            var created = await _userService.CreateUserAsync(request);
             return CreatedAtAction(nameof(GetUserById), new { id = created.Id }, created);
         }
+
 
 
         [HttpPut("{id}")]

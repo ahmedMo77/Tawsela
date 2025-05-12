@@ -14,7 +14,8 @@ namespace Tawsela.Repositories.Implementations
             _context = context;
         }
 
-        public async Task AddAsync(User user) => await _context.Users.AddAsync(user);
+        public async Task AddAsync(User user) =>
+            await _context.Users.AddAsync(user);
 
         public Task DeleteAsync(User user)
         {
@@ -22,11 +23,14 @@ namespace Tawsela.Repositories.Implementations
             return Task.CompletedTask;
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync() => await _context.Users.ToListAsync();
+        public async Task<IEnumerable<User>> GetAllAsync() => 
+            await _context.Users.ToListAsync();
 
-        public async Task<User?> GetByIdAsync(int id) => await _context.Users.FindAsync(id);
+        public async Task<User?> GetByIdAsync(int id) => 
+            await _context.Users.FindAsync(id);
 
-        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
+        public async Task SaveChangesAsync() => 
+            await _context.SaveChangesAsync();
 
         public Task UpdateAsync(User user)
         {

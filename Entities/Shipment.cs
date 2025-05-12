@@ -18,5 +18,10 @@ namespace Tawsela.Entities
         // delivery or shiping company
         public int? CourierId { get; set; }
         public User? Courier { get; set; }
+
+        public void MarkAsDelivered()
+        {
+            Status = ShipmentStatus.Delivered;
+        }
     }
 }
